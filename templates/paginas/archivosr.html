@@ -1,0 +1,135 @@
+
+{% extends 'index.html' %}
+
+{% block title %}
+  Subir archivos | residente
+{% endblock %}
+{% block content%}
+<div class="card text-white bg-info mb-3" style="max-width: 110rem;">
+	<div class="card-body">
+	  <blockquote class="blockquote mb-0">
+		<span>Los siguientes archivos deben ser en formato PDF</span>
+	  </blockquote>
+	</div>
+  </div>
+<hr>
+<div class="card" >
+	<div class="card-header">
+	  Subir Archivos
+	</div>
+	<div class="card-body">
+	 
+	<form method="POST" action="archivosr" enctype="multipart/form-data" id="myform">
+		{% csrf_token %} 
+		<div > 
+			<label for="acta">Acta de Nacimiento</label>
+			<br> 
+			<input type="file" class="form-control" id="acta" name="acta"/>
+		</div> 
+		<hr>
+		<div>
+			<label for="acta">CURP</label>
+			<br> 
+			<input type="file" class="form-control" id="curp" name="curp"/> 
+		</div>
+		<hr>
+		<div>
+			<label for="ine">INE/IFE</label>
+			<br> 
+			<input type="file" class="form-control"  id="ine" name="ine"/> 
+		</div>
+		<hr>
+
+		<div>
+			<label for="com_domicilio">Comprobante de Domicilio</label>
+			<br> 
+			<input type="file" class="form-control" id="com_domicilio" name="com_domicilio" /> 
+		</div>
+		<hr>
+
+		<div>
+			<label for="comp_estudios">Comprobante de Estudios</label>
+			<br> 
+			<input type="file" class="form-control" id="comp_estudios" name="comp_estudios" /> 
+		</div>
+
+		<hr>
+		<div>
+			<label for="carta_present">Comprobante de presentación</label>
+			<br> 
+			<input type="file" class="form-control" id="carta_present" name="carta_present" /> 
+		</div>
+
+		<hr>
+		<div>
+			<label for="cert_medico">Certificado Medico</label>
+			<br> 
+			<input type="file" class="form-control" id="cert_medico" name="cert_medico" /> 
+		</div>
+		<hr>
+		<div align="center"> 
+		<input type="submit" class="btn btn-primary" value="Subir Archivo" id="but_upload"> 
+		</div>
+
+	</form> 
+
+	</div>
+	<div class="card-footer text-muted">
+	 
+	</div>
+  </div>
+  
+	
+	
+	
+{% endblock %}
+
+{% block menu %}
+  <div id="wrapper">
+    <!-- Sidebar -->
+ 	<ul class="sidebar navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="residentes">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Bienvenido</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Menú Principal </span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+        <!--  <h6 class="dropdown-header">Entrar:</h6> Menú login parte derecha de panel
+          <a class="dropdown-item" href="login.html">Iniciar Sesión</a>
+          <a class="dropdown-item" href="register.html">Registrarse</a>
+          <a class="dropdown-item" href="forgot-password.html">¿olvidó sú contraseña?</a>
+          <div class="dropdown-divider"></div> -->
+          <h6 class="dropdown-header">Opciones: </h6>
+
+          <a class="dropdown-item" href="archivosr">Subir archivos</a>
+          <a class="dropdown-item" href="verproyectos">Ver proyectos</a> 
+          <a class="dropdown-item" target="_blank" href="https://www.finkok.com//">FINKOK WebSite</a>
+          <!-- falta hacer vista de proyecto -->
+
+
+       </li>
+      <!--<li class="nav-item"> gráficas
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span></a>
+      </li>-->
+     
+    </ul>
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="residentes">Inicio</a>
+          </li>
+          <li class="breadcrumb-item active">Subir Archivos</li>
+        </ol>
+{% endblock %}
